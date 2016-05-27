@@ -30,8 +30,10 @@ namespace App1
             new OrderModel() { SystemId = "3d" };
             new OrderModel() { SystemId = "4f" };
 
-            HistoryList.ItemsSource = OrderModel.Orders;
-            this.textBox.Text = "Historia (" + OrderModel.Orders.Count.ToString() + ")";
+            var orders = OrderModel.GetOrders();
+
+            HistoryList.ItemsSource = orders;
+            this.textBox.Text = "Historia (" + orders.Count.ToString() + ")";
         }
 
         private void Button_Tapped(object sender, TappedRoutedEventArgs e)

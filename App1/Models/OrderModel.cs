@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +18,12 @@ namespace App1
         public DateTime Created_at { get; set; }
         public Status Status { get; set; }
         public static OrderModel SelectedOrder;
-        public static ObservableCollection<OrderModel> Orders = new ObservableCollection<OrderModel>();
+        
 
-        public OrderModel()
+        public static List<OrderModel> GetOrders()
         {
-            Orders.Add(this);
+            return JsonConvert.DeserializeObject<List<OrderModel>>(File.ReadAllText(@"Assets/orders.json"));
+          
         }
     }
 }
