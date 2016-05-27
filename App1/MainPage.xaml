@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot Title="Logowanie">
             <PivotItem Header="Senior">
-                <Button x:Name="button" Content="Zaloguj" HorizontalAlignment="Left" Click="button_loginSenior" Height="32"  Width="326"/>
+                <Button Style="{StaticResource MainButton}" x:Name="button" Content="Zaloguj" HorizontalAlignment="Left" Click="button_loginSenior" Height="32"  Width="326"/>
 
             </PivotItem>
             <PivotItem Header="Wolontariusz">

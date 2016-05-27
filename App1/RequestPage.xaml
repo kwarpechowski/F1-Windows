@@ -11,8 +11,8 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" x:Name="textBox" Margin="10" FontSize="36" TextWrapping="Wrap" x:Uid="NewOrder" VerticalAlignment="Top" />
-        <Grid Grid.Row="1" Background="Aqua" Padding="10">
+        <TextBlock Grid.Row="0" x:Name="textBox" x:Uid="NewOrder" Style="{StaticResource Header}" />
+        <Grid Grid.Row="1" Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>

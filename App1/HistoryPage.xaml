@@ -13,7 +13,7 @@
             <RowDefinition />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="36" TextWrapping="Wrap" Text="Historia" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="0" x:Name="textBox" Style="{StaticResource Header}" Text="Historia" />
         <ListView Grid.Row="1" x:Name="HistoryList">
             <ListView.ItemTemplate>
                 <DataTemplate>
