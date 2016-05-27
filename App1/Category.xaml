@@ -9,22 +9,20 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="36" Text="Wybor kategorii"/>
-        <ListBox Grid.Row="1" x:Name="CatList" SelectionChanged="CatList_SelectionChanged">
+        <TextBlock Grid.Row="0" FontSize="36" Margin="10" x:Uid="SelectCategory" />
+        <ListBox Grid.Row="1" x:Name="CatList" SelectionChanged="CatList_SelectionChanged" Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="25" Margin="0,5,0,0" FontFamily="Segoe MDL2 Assets" Text=""></TextBlock>
-                        <TextBlock Margin="30,0,0,0" FontSize="25" Text="{Binding Name}"></TextBlock>
+                        <TextBlock Margin="5" FontSize="20" Text="{Binding Name}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Grid.Row="2" x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Click="button_Click"/>
-
+        <Button Grid.Row="2" x:Uid="AddButton" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Top" Click="button_Click"/>
     </Grid>
 </Page>

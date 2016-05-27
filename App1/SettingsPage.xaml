@@ -13,7 +13,7 @@
             <RowDefinition Height="102*" />
             <RowDefinition Height="397*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="36" TextWrapping="Wrap" Text="Ustawienia" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="0" x:Uid="Settings" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="36" TextWrapping="Wrap" VerticalAlignment="Top" />
         <TextBox Grid.Row="1"  x:Name="textBox1" Margin="10,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32"/>
         <Button Grid.Row="2" x:Name="button" Content="Zapisz" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="button_Click" />
     </Grid>

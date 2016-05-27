@@ -11,15 +11,15 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" x:Name="textBox" Margin="10" FontSize="36" TextWrapping="Wrap" Text="Dodawanie zgloszenia" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="0" x:Name="textBox" Margin="10" FontSize="36" TextWrapping="Wrap" x:Uid="NewOrder" VerticalAlignment="Top" />
         <Grid Grid.Row="1" Background="Aqua" Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="Kategoria" VerticalAlignment="Bottom" Margin="10"/>
-            <TextBlock Grid.Row="1" TextWrapping="Wrap" x:Name="selectCat"  Margin="10" Text="Wybierz kategorie" VerticalAlignment="Top" HorizontalAlignment="Center" Tapped="TextBlock_Tapped"/>
+            <TextBlock Grid.Row="0" TextWrapping="Wrap" x:Uid="Category" Text="" VerticalAlignment="Bottom" Margin="10"/>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" x:Uid="SelectCategory"  x:Name="selectCat"  Margin="10" VerticalAlignment="Top" HorizontalAlignment="Center" Tapped="TextBlock_Tapped"/>
             <TextBlock Grid.Row="2" TextWrapping="Wrap" x:Name="catName"  Margin="10" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="ExtraBold" />
         </Grid>
        

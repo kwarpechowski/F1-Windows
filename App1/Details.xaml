@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBlock Grid.Row="0" x:Uid="Details" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="36" TextWrapping="Wrap" VerticalAlignment="Top" />
     </Grid>
 </Page>
