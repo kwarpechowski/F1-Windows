@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="App1.HistoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" x:Name="textBox" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="36" TextWrapping="Wrap" Text="Historia" VerticalAlignment="Top" />
+        <ListView Grid.Row="1" x:Name="HistoryList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10" BorderBrush="Azure">
+                        <TextBlock Text="{Binding SystemId}" />
+                        <Button Content="Zobacz szczegoly" Tapped="Button_Tapped"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
