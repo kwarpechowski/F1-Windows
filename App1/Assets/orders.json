@@ -1,8 +1,12 @@
 ﻿[
   {
+    "Latitude": 52.2297,
+    "Longitude": 21.0122,
     "SystemId": "Order1"
   },
   {
+    "Latitude": 52.2300,
+    "Longitude": 21.020,
     "SystemId": "Order2"
   }
 ]

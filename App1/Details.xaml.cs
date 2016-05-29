@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using Windows.Devices.Geolocation;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Controls.Maps;
+using App1.Helpers;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +16,24 @@ namespace App1
         public Details()
         {
             this.InitializeComponent();
+
+   
+            MapControl MapControl = MapHelper.GetMap();
+            Grid.Children.Add(MapControl);
+
+            BasicGeoposition cityPosition = new BasicGeoposition() {
+                Latitude = OrderModel.SelectedOrder.Latitude,
+                Longitude = OrderModel.SelectedOrder.Longitude
+            };
+            Geopoint point = new Geopoint(cityPosition);
+            MapControl.Center = point;
+
+
+            MapIcon MapIcon1 = new MapIcon();
+            MapIcon1.Location = point;
+            MapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            MapIcon1.Title = OrderModel.SelectedOrder.SystemId;
+            MapControl.MapElements.Add(MapIcon1);
         }
     }
 }

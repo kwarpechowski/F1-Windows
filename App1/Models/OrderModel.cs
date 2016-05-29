@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App1
 {
@@ -13,8 +9,8 @@ namespace App1
     {
         public string SystemId { get; set; }
         public CategoryModel Category { get; set; }
-        public float Lat { get; set; }
-        public float Lng { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public DateTime Created_at { get; set; }
         public Status Status { get; set; }
         public static OrderModel SelectedOrder;
