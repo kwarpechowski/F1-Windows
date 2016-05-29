@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using App1.Helpers;
 using Windows.Devices.Geolocation;
 using Windows.UI.Xaml.Controls.Maps;
+using Newtonsoft.Json.Linq;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,6 +29,7 @@ namespace App1
         public RequestsPage()
         {
             this.InitializeComponent();
+            this.BindList();
 
             var MapControl = MapHelper.GetMap();
             Grid.Children.Add(MapControl);
@@ -50,6 +52,16 @@ namespace App1
                 MapControl.MapElements.Add(MapIcon1);
                 MapControl.Center = point;
             }
+        }
+
+        private void BindList()
+        {
+            List<string> items = new List<string>();
+            items.Add("xx");
+            items.Add("yy");
+            items.Add("xx");
+
+            SelectItem.ItemsSource = items;
         }
     }
 }

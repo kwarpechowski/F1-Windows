@@ -1,14 +1,16 @@
-﻿[
-  {
-    "Latitude": 52.2297,
-    "Longitude": 21.0122,
-    "SystemId": "Order1",
-    "Status":  "Created"
-  },
-  {
-    "Latitude": 52.2300,
-    "Longitude": 21.020,
-    "SystemId": "Order2",
-    "Status": "Canceled"
-  }
-]
+﻿{
+  "orders": [
+    {
+      "Latitude": 52.2297,
+      "Longitude": 21.0122,
+      "SystemId": "Order1",
+      "Status": "Created"
+    },
+    {
+      "Latitude": 52.2300,
+      "Longitude": 21.020,
+      "SystemId": "Order2",
+      "Status": "Canceled"
+    }
+  ]
+}

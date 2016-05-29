@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,8 @@ namespace App1
 {
     class OrderModel
     {
+        private static string FilePath = @"Assets/orders.json";
+
         public string SystemId { get; set; }
         public CategoryModel Category { get; set; }
         public double Latitude { get; set; }
@@ -20,10 +23,13 @@ namespace App1
         public static OrderModel SelectedOrder;
         
 
-        public static List<OrderModel> GetOrders()
+        public static IEnumerable<OrderModel> GetOrders()
         {
-            return JsonConvert.DeserializeObject<List<OrderModel>>(File.ReadAllText(@"Assets/orders.json"));
-          
+            StreamReader reader = File.OpenText(FilePath);
+            var j = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
+            var array = (JArray)j.SelectToken("orders");
+            return array.ToObject<IEnumerable<OrderModel>>();
+
         }
     }
 }

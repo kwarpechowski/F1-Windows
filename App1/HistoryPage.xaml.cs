@@ -33,7 +33,7 @@ namespace App1
             var orders = OrderModel.GetOrders();
 
             HistoryList.ItemsSource = orders;
-            this.textBox.Text = "Historia (" + orders.Count.ToString() + ")";
+            this.textBox.Text = "Historia (" + orders.Count().ToString() + ")";
         }
 
         private void Button_Tapped(object sender, TappedRoutedEventArgs e)
