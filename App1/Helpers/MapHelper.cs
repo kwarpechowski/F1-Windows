@@ -20,7 +20,7 @@ namespace App1.Helpers
             MapControl.ZoomLevel = 15;
             MapControl.LandmarksVisible = true;
             MapControl.HorizontalAlignment = HorizontalAlignment.Stretch;
-            MapControl.Height = 250;
+            MapControl.VerticalAlignment = VerticalAlignment.Stretch;
 
             return MapControl;
         }

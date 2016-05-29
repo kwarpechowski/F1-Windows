@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,10 @@ namespace App1
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public DateTime Created_at { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public Status Status { get; set; }
+
         public static OrderModel SelectedOrder;
         
 

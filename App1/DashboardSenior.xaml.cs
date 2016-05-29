@@ -29,6 +29,7 @@ namespace App1
             List<Menu> menuList = new List<Menu>();
             menuList.Add(new Menu() { Name = "Menu", Page = null });
             menuList.Add(new Menu() { Name = "Pomoc", Page = typeof(FastHelpPage) });
+            menuList.Add(new Menu() { Name = "Zgloszenia", Page = typeof(RequestsPage) });
             menuList.Add(new Menu() { Name = "Zgloszenie", Page = typeof(RequestPage) });
             menuList.Add(new Menu() { Name = "Historia", Page = typeof(HistoryPage) });
             menuList.Add(new Menu() { Name = "Ustawienia", Page = typeof(SettingsPage) });

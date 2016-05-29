@@ -7,7 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="Grid">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" x:Uid="Details" VerticalAlignment="Top" Style="{StaticResource Header}"/>
+        <TextBlock Grid.Row="1" x:Name="TitleHeader" VerticalAlignment="Top" />
+        <TextBlock Grid.Row="2" x:Name="Status" VerticalAlignment="Top" />
+
+        <Grid Grid.Row="3" x:Name="Grid">
+            
+        </Grid>
+        <Button Grid.Row="4" Content="back" HorizontalAlignment="Stretch" Height="30" />
     </Grid>
 </Page>
