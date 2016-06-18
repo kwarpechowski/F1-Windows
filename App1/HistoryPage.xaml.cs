@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,16 +27,20 @@ namespace App1
         public HistoryPage()
         {
             this.InitializeComponent();
-            new OrderModel() { SystemId = "1x" };
-            new OrderModel() { SystemId = "2v" };
-            new OrderModel() { SystemId = "3d" };
-            new OrderModel() { SystemId = "4f" };
+            this.GetData();
 
-            var orders = OrderModel.GetOrders();
+        }
 
+        private async void GetData()
+        {
+            HttpClient httpClient = new HttpClient();
+            string response = await httpClient.GetStringAsync("http://localhost:2321/api/Orders");
+            IEnumerable<OrderModel> orders = JsonConvert.DeserializeObject<IEnumerable<OrderModel>>(response);
             HistoryList.ItemsSource = orders;
             this.textBox.Text = "Historia (" + orders.Count().ToString() + ")";
+
         }
+
 
         private void Button_Tapped(object sender, TappedRoutedEventArgs e)
         {

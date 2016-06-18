@@ -37,14 +37,14 @@ namespace App1
             var MapIcon1 = new MapIcon();
             MapIcon1.Location = point;
             MapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-            MapIcon1.Title = OrderModel.SelectedOrder.SystemId;
+            MapIcon1.Title = OrderModel.SelectedOrder.Name;
 
             MapControl.MapElements.Add(MapIcon1);
         }
 
         private void SetData()
         {
-           TitleHeader.Text = Om.SystemId;
+           TitleHeader.Text = Om.Name;
            Status.Text = Om.Status.ToString();
         }
     }

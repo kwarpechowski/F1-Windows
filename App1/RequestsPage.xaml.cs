@@ -16,6 +16,8 @@ using App1.Helpers;
 using Windows.Devices.Geolocation;
 using Windows.UI.Xaml.Controls.Maps;
 using Newtonsoft.Json.Linq;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,13 +32,18 @@ namespace App1
         {
             this.InitializeComponent();
             this.BindList();
-
+            this.GetData();
+        }
+        private async void GetData()
+        {
             var MapControl = MapHelper.GetMap();
             Grid.Children.Add(MapControl);
+            HttpClient httpClient = new HttpClient();
+            string response = await httpClient.GetStringAsync("http://localhost:2321/api/Orders");
+            IEnumerable<OrderModel> orders = JsonConvert.DeserializeObject<IEnumerable<OrderModel>>(response);
 
-            var list = OrderModel.GetOrders();
-
-            foreach(var model in list) {
+            foreach (var model in orders)
+            {
 
                 var cityPosition = new BasicGeoposition()
                 {
@@ -47,7 +54,7 @@ namespace App1
                 var MapIcon1 = new MapIcon();
                 MapIcon1.Location = point;
                 MapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-                MapIcon1.Title = model.SystemId;
+                MapIcon1.Title = model.Name;
 
                 MapControl.MapElements.Add(MapIcon1);
                 MapControl.Center = point;

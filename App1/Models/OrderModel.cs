@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 
 namespace App1
 {
@@ -11,7 +12,7 @@ namespace App1
     {
         private static string FilePath = @"Assets/orders.json";
 
-        public string SystemId { get; set; }
+        public string Name { get; set; }
         public CategoryModel Category { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
@@ -21,15 +22,7 @@ namespace App1
         public Status Status { get; set; }
 
         public static OrderModel SelectedOrder;
-        
 
-        public static IEnumerable<OrderModel> GetOrders()
-        {
-            StreamReader reader = File.OpenText(FilePath);
-            var j = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
-            var array = (JArray)j.SelectToken("orders");
-            return array.ToObject<IEnumerable<OrderModel>>();
 
-        }
     }
 }
